@@ -18,8 +18,8 @@ class LoserFragment : Fragment() {
         playAgainButtonLoser = v.findViewById(R.id.buttonLoserPlayAgain)
         listaRiepilogo2 = v.findViewById(R.id.listaRisultati3)
         //val adapter = ArrayAdapter(v.context,android.R.layout.simple_list_item_1,Questionario.riepilogo)
-        val adapter = CustomAdapter(QuestionarioMemoria.riepilogo)
-        listaRiepilogo2.adapter = adapter
+        //val adapter = CustomAdapter(QuestionarioMemoria.riepilogo)
+        //listaRiepilogo2.adapter = adapter
         playAgainButtonLoser.setOnClickListener(
             Navigation.createNavigateOnClickListener(R.id.action_loserFragment_to_questionFragment)
         )

@@ -23,7 +23,7 @@ class CustomAdapter(val lista: MutableList<String>) : BaseAdapter() {
             rowView = inflater.inflate(R.layout.riepilogo_lista_elemento,parent,false)
         }
 
-        val numeroDomanda = rowView?.findViewById<TextView>(R.id.textView3)
+        /*val numeroDomanda = rowView?.findViewById<TextView>(R.id.textView3)
         val numero = position + 1
         numeroDomanda?.text = numero.toString()
 
@@ -39,7 +39,7 @@ class CustomAdapter(val lista: MutableList<String>) : BaseAdapter() {
         }
 
         val testoDomanda = rowView?.findViewById<TextView>(R.id.textView5)
-        testoDomanda?.text = QuestionarioMemoria.questions[position].question
+        testoDomanda?.text = QuestionarioMemoria.questions[position].question*/
 
         return rowView!!
     }

@@ -6,26 +6,28 @@ import com.example.quizkotlin.DatabaseManager.QuestionEntry.COLUMN_OPZIONE1
 import com.example.quizkotlin.DatabaseManager.QuestionEntry.COLUMN_OPZIONE2
 import com.example.quizkotlin.DatabaseManager.QuestionEntry.COLUMN_OPZIONE3
 import com.example.quizkotlin.DatabaseManager.QuestionEntry.COLUMN_RISPOSTA
-import com.example.quizkotlin.DatabaseManager.QuestionEntry.COLUMN_RISPOSTA_UTENTE
+import com.example.quizkotlin.DatabaseManager.QuestionEntry.COLUMN_RISPOSTAU
 import com.example.quizkotlin.DatabaseManager.QuestionEntry.COLUMN_TESTO
 import com.example.quizkotlin.DatabaseManager.QuestionEntry.TABLE_NAME
 import com.example.quizkotlin.DatabaseManager.QuestionEntry._ID
 
 class QuestionarioDatabase(val context: Context) : Questionario {
+    //var _questions: MutableList<Question>? = null
     var _questions: MutableList<Question>? = null
-    override var questions: MutableList<Question>? = null
+    override var questions: List<Question>? = null
     get() {
         if(_questions == null) {
             readQuestions()
+            _questions!!.shuffle()
         }
         // Qua ritorna alla fine 5 domande, casuali.
-        return _questions
+        return _questions!!.take(5)
     }
-    override lateinit var riepilogo: MutableList<String>
+   // override lateinit var riepilogo: MutableList<String>
 
     fun readQuestions() {
         val db = QuestionDBHelper(context).readableDatabase
-        val projection = arrayOf(_ID, COLUMN_TESTO, COLUMN_OPZIONE1, COLUMN_OPZIONE2, COLUMN_OPZIONE3, COLUMN_RISPOSTA, COLUMN_RISPOSTA_UTENTE)
+        val projection = arrayOf(_ID, COLUMN_TESTO, COLUMN_OPZIONE1, COLUMN_OPZIONE2, COLUMN_OPZIONE3, COLUMN_RISPOSTA, COLUMN_RISPOSTAU)
 
         val cursor : Cursor = db.query(TABLE_NAME, projection, null, null, null, null, null)
 
@@ -35,7 +37,7 @@ class QuestionarioDatabase(val context: Context) : Questionario {
         val answerOption2ColumnIndex = cursor.getColumnIndexOrThrow(COLUMN_OPZIONE2)
         val answerOption3ColumnIndex = cursor.getColumnIndexOrThrow(COLUMN_OPZIONE3)
         val answerColumnIndex = cursor.getColumnIndexOrThrow(COLUMN_RISPOSTA)
-        val userAnswerColumnIndex = cursor.getColumnIndexOrThrow(COLUMN_RISPOSTA_UTENTE)
+        val userAnswerColumnIndex = cursor.getColumnIndexOrThrow(COLUMN_RISPOSTAU)
 
         _questions = mutableListOf<Question>()
 

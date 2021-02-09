@@ -18,8 +18,8 @@ class WinnerFragment : Fragment() {
         playAgainButtonWinner = v.findViewById(R.id.buttonWinnerPlayAgain)
         listaRiepilogo = v.findViewById(R.id.riepilogoRisultati)
         //val adapter = ArrayAdapter(v.context,android.R.layout.simple_list_item_1,Questionario.riepilogo)
-        val adapter = CustomAdapter(QuestionarioMemoria.riepilogo)
-        listaRiepilogo.adapter = adapter
+        //val adapter = CustomAdapter(QuestionarioMemoria.riepilogo)
+        //listaRiepilogo.adapter = adapter
         playAgainButtonWinner.setOnClickListener(
             Navigation.createNavigateOnClickListener(R.id.action_winnerFragment_to_questionFragment)
         )

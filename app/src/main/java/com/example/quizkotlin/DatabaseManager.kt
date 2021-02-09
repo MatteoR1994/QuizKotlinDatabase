@@ -20,7 +20,7 @@ object DatabaseManager {
 
         const val COLUMN_RISPOSTA = "risposta"
 
-        const val COLUMN_RISPOSTA_UTENTE = "risposta utente"
+        const val COLUMN_RISPOSTAU = "risutente"
 
     }
 }

@@ -19,5 +19,5 @@ class QuestionarioMemoria() : Questionario {
             ),0),
         )
         //val riepilogo = Array<String>(3){""}
-        override val riepilogo = mutableListOf("","","")
+        //override val riepilogo = mutableListOf("","","")
 }
