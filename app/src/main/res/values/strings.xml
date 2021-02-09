@@ -7,4 +7,11 @@
     <string name="winner_string">BRAVO, TEST SUPERATO</string>
     <string name="play_again_string">GIOCA ANCORA</string>
     <string name="loser_string">CAPRA! VAI A STUDIARE</string>
+    <string name="new_question_btn_string">Aggiungi domanda</string>
+    <string name="input_question_hint_string">Scrivi nuova domanda</string>
+    <string name="risposta1_hint">Risposta 1</string>
+    <string name="risposta2_hint">Risposta 2</string>
+    <string name="risposta3_hint">Risposta 3</string>
+    <string name="risposta_esatta_hint"><![CDATA[Numero risposta esatta (0->2)]]></string>
+    <string name="insert_button_text">Inserisci</string>
 </resources>

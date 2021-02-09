@@ -15,13 +15,18 @@ import kotlinx.android.synthetic.main.fragment_start.*
 class StartFragment : Fragment() {
 
     lateinit var buttonStart: Button
+    lateinit var buttonNewQuestion: Button
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         val v = inflater.inflate(R.layout.fragment_start, container, false)
         buttonStart = v.findViewById(R.id.startButton)
+        buttonNewQuestion = v.findViewById(R.id.newQuestionBtn)
         buttonStart.setOnClickListener(
             Navigation.createNavigateOnClickListener(R.id.action_startFragment_to_questionFragment)
+        )
+        buttonNewQuestion.setOnClickListener(
+            Navigation.createNavigateOnClickListener(R.id.action_startFragment_to_newQuestionFragment)
         )
         return v
 
