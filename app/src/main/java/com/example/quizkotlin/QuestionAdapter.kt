@@ -40,6 +40,11 @@ class QuestionAdapter(private var questionList: List<Question>) : RecyclerView.A
                 }
             }
         }
+        fun resetOptionAnswerColor() {
+            this.optionAnswer1.setTextColor(Color.BLACK)
+            this.optionAnswer2.setTextColor(Color.BLACK)
+            this.optionAnswer3.setTextColor(Color.BLACK)
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): QuestionViewHolder {
@@ -50,6 +55,7 @@ class QuestionAdapter(private var questionList: List<Question>) : RecyclerView.A
     }
 
     override fun onBindViewHolder(holder: QuestionViewHolder, position: Int) {
+        holder.resetOptionAnswerColor()
         val item = questionList[position]
         holder.bindQuestion(item)
     }
