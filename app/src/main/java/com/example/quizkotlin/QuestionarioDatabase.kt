@@ -11,7 +11,7 @@ import com.example.quizkotlin.DatabaseManager.QuestionEntry.COLUMN_TESTO
 import com.example.quizkotlin.DatabaseManager.QuestionEntry.TABLE_NAME
 import com.example.quizkotlin.DatabaseManager.QuestionEntry._ID
 
-class QuestionarioDatabase(val context: Context) : Questionario {
+class QuestionarioDatabase(val context: Context, val requestType: String = "gioco") : Questionario {
     //var _questions: MutableList<Question>? = null
     var _questions: MutableList<Question>? = null
     override var questions: List<Question>? = null
@@ -21,7 +21,12 @@ class QuestionarioDatabase(val context: Context) : Questionario {
             _questions!!.shuffle()
         }
         // Qua ritorna alla fine 5 domande, casuali.
-        return _questions!!.take(5)
+        //return _questions!!.take(5)
+        if(requestType == "gioco") {
+            return _questions!!.take(5)
+        } else {
+            return _questions!!
+        }
     }
    // override lateinit var riepilogo: MutableList<String>
 

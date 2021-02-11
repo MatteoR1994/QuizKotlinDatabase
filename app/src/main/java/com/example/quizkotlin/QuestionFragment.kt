@@ -10,6 +10,7 @@ import androidx.core.view.children
 import androidx.navigation.findNavController
 
 class QuestionFragment : Fragment() {
+
     lateinit var questionText: TextView
     lateinit var answersGroup: RadioGroup
     var punteggio = 0
@@ -17,10 +18,9 @@ class QuestionFragment : Fragment() {
     lateinit var sendAnswerButton: Button
     //val questionario: Questionario = QuestionarioMemoria()
     lateinit var questionario: Questionario
-    //var questionario: Questionario = QuestionarioDatabase(requireContext())
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val v = inflater.inflate(R.layout.fragment_question, container, false)
-
         questionario = QuestionarioDatabase(requireContext())
         questionText = v.findViewById(R.id.questionText)
         answersGroup = v.findViewById(R.id.answers)

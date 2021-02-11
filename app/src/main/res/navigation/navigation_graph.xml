@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_startFragment_to_newQuestionFragment"
             app:destination="@id/newQuestionFragment" />
+        <action
+            android:id="@+id/action_startFragment_to_listQuestionsFragment"
+            app:destination="@id/listQuestionsFragment" />
     </fragment>
     <fragment
         android:id="@+id/questionFragment"
@@ -52,4 +55,9 @@
         android:name="com.example.quizkotlin.NewQuestionFragment"
         android:label="fragment_new_question"
         tools:layout="@layout/fragment_new_question" />
+    <fragment
+        android:id="@+id/listQuestionsFragment"
+        android:name="com.example.quizkotlin.ListQuestionsFragment"
+        android:label="fragment_list_questions"
+        tools:layout="@layout/fragment_list_questions" />
 </navigation>

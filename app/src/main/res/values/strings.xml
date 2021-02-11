@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">quizKotlin</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="startButton">INIZIA IL QUIZ</string>
     <string name="confirmBtn">INVIA</string>
@@ -14,4 +13,5 @@
     <string name="risposta3_hint">Risposta 3</string>
     <string name="risposta_esatta_hint"><![CDATA[Numero risposta esatta (0->2)]]></string>
     <string name="insert_button_text">Inserisci</string>
+    <string name="show_questions_string">VEDI DOMANDE</string>
 </resources>
